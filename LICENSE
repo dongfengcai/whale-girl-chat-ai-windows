@@ -1,0 +1,41 @@
+MIT License
+
+Copyright (c) 2026 dongfengcai
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------
+
+Third-party components downloaded at install time. They are NOT included in
+this repository, so the MIT license above does not cover them:
+
+  AstrBot   https://github.com/AstrBotDevs/AstrBot   AGPL-3.0
+  NapCat    https://github.com/NapNeko/NapCatQQ      "Limited Redistribution
+            License for NapCat" (not an OSI license; includes a
+            non-commercial clause and restricts redistribution)
+  Python    https://www.nuget.org/packages/python    PSF-2.0
+
+The install script fetches each of them from its official release page. It
+does not redistribute them, which is what keeps this repo clean.
+
+Do NOT repackage this project into an offline bundle that already contains
+NapCat (or the AstrBot dashboard build) and then redistribute that bundle --
+NapCat's license requires the author's permission for redistribution and
+forbids commercial use. Downloading at install time avoids the question
+entirely, so keep it that way.

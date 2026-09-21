@@ -1,0 +1,6 @@
+name: astrbot_plugin_media_pacer
+display_name: 鲸鱼娘·媒体节流
+desc: 跳过语音视频等非文字图片消息，并对图片识别做令牌桶限流，保护带宽与开销
+version: v1.0.0
+author: dongfengcai
+repo: https://github.com/dongfengcai/whale-girl-chat-ai

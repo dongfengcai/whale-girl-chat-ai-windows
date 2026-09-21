@@ -1,0 +1,101 @@
+{
+  "enabled": {
+    "description": "启用余额守护",
+    "hint": "关闭后不再轮询余额，也不会熔断",
+    "type": "bool",
+    "default": true
+  },
+  "api_key": {
+    "description": "DeepSeek API Key",
+    "hint": "已预填默认值，可随时在面板修改。留空则自动从 AstrBot 的模型提供商配置里读取",
+    "type": "string",
+    "default": "",
+    "secret": true
+  },
+  "red_line": {
+    "description": "余额红线",
+    "hint": "余额低于或等于此值时触发熔断并停止回复",
+    "type": "float",
+    "default": 5.0
+  },
+  "currency": {
+    "description": "币种",
+    "hint": "与 DeepSeek 账户返回的币种匹配",
+    "type": "string",
+    "default": "CNY",
+    "options": ["CNY", "USD"]
+  },
+  "balance_field": {
+    "description": "判定字段",
+    "hint": "total_balance = 总额（含赠金，推荐）；topped_up_balance = 仅充值余额",
+    "type": "string",
+    "default": "total_balance",
+    "options": ["total_balance", "topped_up_balance", "granted_balance"]
+  },
+  "check_interval_minutes": {
+    "description": "轮询间隔（分钟）",
+    "hint": "建议 10 分钟以上，余额接口本身也有调用开销",
+    "type": "int",
+    "default": 10
+  },
+  "admin_qq": {
+    "description": "管理员 QQ",
+    "hint": "接收告警、并可发送恢复指令解除熔断",
+    "type": "string",
+    "default": ""
+  },
+  "group_daily_token_limit": {
+    "description": "每群每日 token 上限",
+    "hint": "单位 token。用量取自 AstrBot 的真实统计（provider_stats），达标后该群停止服务。0 = 不限制",
+    "type": "int",
+    "default": 200000
+  },
+  "group_limit_reset_hour": {
+    "description": "额度每日重置时间（小时）",
+    "hint": "0-23，本地时区。默认 0 = 每天零点重置",
+    "type": "int",
+    "default": 0
+  },
+  "group_limit_notify": {
+    "description": "群额度用尽时的提示语",
+    "hint": "留空则静默。可用 {limit} 占位上限值",
+    "type": "text",
+    "default": "本群今天的额度用完啦，明天再来找我吧。"
+  },
+  "group_limit_command": {
+    "description": "群额度恢复指令",
+    "hint": "管理员私聊机器人发送：<指令> <群号>，可立即为该群重置额度",
+    "type": "string",
+    "default": "额度恢复"
+  },
+  "notify_targets": {
+    "description": "告警接收者",
+    "hint": "留空则只发给管理员。格式：group:群号 或 private:QQ号",
+    "type": "list",
+    "default": []
+  },
+  "notify_once": {
+    "description": "只告警一次",
+    "hint": "开启后触线只发一条告警，避免每轮轮询都刷屏",
+    "type": "bool",
+    "default": true
+  },
+  "resume_command": {
+    "description": "恢复指令",
+    "hint": "管理员私聊机器人发送此指令即可立即重新检查并解除熔断",
+    "type": "string",
+    "default": "余额恢复"
+  },
+  "failure_threshold": {
+    "description": "查询失败告警阈值",
+    "hint": "连续失败达到此次数才告警，避免网络抖动误报",
+    "type": "int",
+    "default": 3
+  },
+  "blocked_reply": {
+    "description": "熔断时的提示语",
+    "hint": "留空则不回复任何内容（完全静默）",
+    "type": "text",
+    "default": "抱歉，我这边暂时没法回复了，晚点再找我吧。"
+  }
+}

@@ -1,0 +1,6 @@
+name: astrbot_plugin_identity
+display_name: 鲸鱼娘·身份注入
+desc: 在每条消息前标注发送者名字与群角色，让模型能区分群里的不同用户
+version: v1.0.0
+author: dongfengcai
+repo: https://github.com/dongfengcai/whale-girl-chat-ai

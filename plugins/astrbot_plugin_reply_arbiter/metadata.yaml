@@ -1,0 +1,6 @@
+name: astrbot_plugin_reply_arbiter
+display_name: 鲸鱼娘·回应仲裁
+desc: 群聊被多人同时 @ 时按上下文优先接续正在进行的对话，否则回应最早 @ 的人
+version: v1.0.0
+author: dongfengcai
+repo: https://github.com/dongfengcai/whale-girl-chat-ai

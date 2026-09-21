@@ -1,0 +1,64 @@
+{
+  "enabled": {
+    "description": "启用身份注入",
+    "type": "bool",
+    "default": true
+  },
+  "include_name": {
+    "description": "注入发送者名字",
+    "hint": "关掉的话模型就分不清谁在说话了，一般不要关",
+    "type": "bool",
+    "default": true
+  },
+  "include_role": {
+    "description": "注入群角色",
+    "hint": "群主 / 管理员 / 成员。需要调 NapCat 接口查询，结果会缓存",
+    "type": "bool",
+    "default": true
+  },
+  "include_group": {
+    "description": "注入群名",
+    "type": "bool",
+    "default": false
+  },
+  "include_activity": {
+    "description": "注入活跃度",
+    "hint": "按本地发言统计标记「活跃」。注意每轮都要发，会增加 token 消耗",
+    "type": "bool",
+    "default": false
+  },
+  "activity_window_hours": {
+    "description": "活跃度统计窗口（小时）",
+    "type": "int",
+    "default": 72
+  },
+  "activity_min_messages": {
+    "description": "判定为活跃的最少发言数",
+    "hint": "窗口内发言达到此数才算活跃",
+    "type": "int",
+    "default": 10
+  },
+  "role_cache_minutes": {
+    "description": "角色缓存时长（分钟）",
+    "hint": "避免每条消息都调接口。群里有人被升降权限最多延迟这么久才反映",
+    "type": "int",
+    "default": 10
+  },
+  "query_timeout_seconds": {
+    "description": "查询超时（秒）",
+    "hint": "超时就退化为只注入名字，不会阻塞消息",
+    "type": "int",
+    "default": 3
+  },
+  "name_max_length": {
+    "description": "名字最大长度",
+    "hint": "超长昵称截断，避免污染提示词",
+    "type": "int",
+    "default": 12
+  },
+  "debug": {
+    "description": "输出调试日志",
+    "type": "bool",
+    "default": false
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "enabled": {
+    "description": "启用戳一戳回应",
+    "type": "bool",
+    "default": true
+  },
+  "reaction_text": {
+    "description": "戳一戳的提示语",
+    "hint": "转成文字喂给模型，让它知道发生了什么。模型会按人设回复这句话",
+    "type": "text",
+    "default": "有人戳了你一下"
+  },
+  "inject_at": {
+    "description": "注入 @ 标记（保持仲裁兼容）",
+    "hint": "开启后戳一戳会被视为 @ 自己，从而参与回应仲裁。关闭则戳一戳不参与仲裁",
+    "type": "bool",
+    "default": true
+  },
+  "cooldown_seconds": {
+    "description": "同一会话的冷却时间（秒）",
+    "hint": "防止被连续戳导致刷屏和烧 token。0 = 不限制",
+    "type": "int",
+    "default": 5
+  },
+  "only_when_poked": {
+    "description": "只响应戳自己",
+    "hint": "开启后戳别人不会触发；关闭则任何戳一戳都会回应（不推荐）",
+    "type": "bool",
+    "default": true
+  },
+  "debug": {
+    "description": "输出调试日志",
+    "type": "bool",
+    "default": false
+  }
+}

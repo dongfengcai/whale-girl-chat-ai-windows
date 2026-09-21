@@ -1,0 +1,73 @@
+{
+  "enabled": {
+    "description": "启用媒体节流",
+    "type": "bool",
+    "default": true
+  },
+  "skip_voice": {
+    "description": "跳过语音",
+    "hint": "语音消息不送进模型，静默忽略",
+    "type": "bool",
+    "default": true
+  },
+  "skip_video": {
+    "description": "跳过视频",
+    "type": "bool",
+    "default": true
+  },
+  "skip_file": {
+    "description": "跳过文件",
+    "type": "bool",
+    "default": true
+  },
+  "skip_forward": {
+    "description": "跳过合并转发",
+    "hint": "聊天记录合并转发体积大，建议跳过",
+    "type": "bool",
+    "default": true
+  },
+  "keep_text_alongside": {
+    "description": "保留文字部分",
+    "hint": "开启后，语音/视频消息里夹带的文字仍会被理解，只丢弃媒体本身",
+    "type": "bool",
+    "default": true
+  },
+  "image_capacity": {
+    "description": "图片令牌桶容量",
+    "hint": "允许连续识别的图片张数",
+    "type": "int",
+    "default": 3
+  },
+  "image_refill_seconds": {
+    "description": "令牌恢复间隔（秒）",
+    "hint": "每多少秒恢复 1 个图片令牌",
+    "type": "int",
+    "default": 20
+  },
+  "on_exceeded": {
+    "description": "图片超出限额时",
+    "hint": "skip = 移除图片但保留文字（推荐）；block = 整条消息不再触发模型",
+    "type": "string",
+    "default": "skip",
+    "options": ["skip", "block"]
+  },
+  "per": {
+    "description": "限流粒度",
+    "hint": "session = 每个群/每个私聊独立计数（推荐）；global = 全局共享",
+    "type": "string",
+    "default": "session",
+    "options": ["session", "global"]
+  },
+  "bypass_admin": {
+    "description": "管理员不受限",
+    "hint": "开启后管理员发图不受令牌桶约束（方便测试和换人设图）",
+    "type": "bool",
+    "default": true
+  },
+  "notify_on_exceeded": {
+    "description": "超限时提示语",
+    "hint": "留空则不提示。可用 {seconds} 占位剩余等待秒数",
+    "type": "text",
+    "default": ""
+  }
+}
