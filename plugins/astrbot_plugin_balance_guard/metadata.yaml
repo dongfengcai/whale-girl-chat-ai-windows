@@ -1,0 +1,6 @@
+name: astrbot_plugin_balance_guard
+display_name: 鲸鱼娘·余额守护
+desc: 监控 DeepSeek 账户余额，低于红线时告警并熔断，停止回复以控制消耗
+version: v1.0.0
+author: dongfengcai
+repo: https://github.com/dongfengcai/whale-girl-chat-ai

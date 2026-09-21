@@ -1,0 +1,6 @@
+name: astrbot_plugin_poke_react
+display_name: 鲸鱼娘·戳一戳回应
+desc: 让机器人对戳一戳有反应，并把戳一戳视为 @ 一样参与回应仲裁
+version: v1.0.0
+author: dongfengcai
+repo: https://github.com/dongfengcai/whale-girl-chat-ai

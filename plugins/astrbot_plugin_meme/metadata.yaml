@@ -1,0 +1,6 @@
+name: astrbot_plugin_meme
+display_name: 鲸鱼娘·表情包
+desc: 让模型按语境发表情包，支持自动收集群里的表情、手动打标签管理图库
+version: v1.0.0
+author: dongfengcai
+repo: https://github.com/dongfengcai/whale-girl-chat-ai

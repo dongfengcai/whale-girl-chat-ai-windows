@@ -1,0 +1,96 @@
+{
+  "enabled": {
+    "description": "启用表情功能",
+    "type": "bool",
+    "default": true
+  },
+  "send_enabled": {
+    "description": "允许模型发表情包",
+    "hint": "模型会在合适的时候输出 [表情:标签]，插件替换成图片",
+    "type": "bool",
+    "default": true
+  },
+  "collect_enabled": {
+    "description": "自动收集群里的表情包",
+    "hint": "收集到的图先进待筛选池；开了自动打标签就会自动入库，否则需要手动打",
+    "type": "bool",
+    "default": true
+  },
+  "collect_groups": {
+    "description": "收集来源群号",
+    "hint": "每行一个群号。留空 = 所有群都收集",
+    "type": "list",
+    "default": []
+  },
+  "auto_tag": {
+    "description": "自动打标签",
+    "hint": "用视觉模型给收集到的图自动分类，省去手动打标签。需要当前模型支持图片（deepseek-flash 支持，deepseek-v4-pro 不支持）",
+    "type": "bool",
+    "default": true
+  },
+  "auto_tag_provider": {
+    "description": "打标签用的模型提供商 ID",
+    "hint": "留空 = 用当前对话模型。必须支持图片",
+    "type": "string",
+    "default": ""
+  },
+  "auto_tag_daily_limit": {
+    "description": "每日自动打标签上限（张）",
+    "hint": "控制成本。一张图约 765 token；超过上限的图留在池子里等手动处理",
+    "type": "int",
+    "default": 50
+  },
+  "auto_tag_interval_seconds": {
+    "description": "打标签间隔（秒）",
+    "hint": "每张之间的等待，避免打爆 API 和 2GB 内存",
+    "type": "int",
+    "default": 3
+  },
+  "auto_tag_unclear": {
+    "description": "模型判断不出情绪时",
+    "hint": "keep = 留在池子里等你手动打；discard = 直接丢弃",
+    "type": "string",
+    "default": "keep",
+    "options": ["keep", "discard"]
+  },
+  "library_limit": {
+    "description": "图库上限（张）",
+    "hint": "已打标签、可被模型使用的图。达到上限后不再入库",
+    "type": "int",
+    "default": 300
+  },
+  "pool_limit": {
+    "description": "待筛选池上限（张）",
+    "type": "int",
+    "default": 60
+  },
+  "max_file_mb": {
+    "description": "单张图大小上限（MB）",
+    "hint": "3Mbps 带宽下不建议调大",
+    "type": "float",
+    "default": 1.0
+  },
+  "send_probability": {
+    "description": "发表情概率",
+    "hint": "0-1。模型即使输出了标记，也只有这个概率真的发图，避免每条都发",
+    "type": "float",
+    "default": 0.7
+  },
+  "require_text": {
+    "description": "发图时必须带文字",
+    "hint": "关闭后允许只发一张图不配文字",
+    "type": "bool",
+    "default": true
+  },
+  "admin_qq": {
+    "description": "管理员 QQ",
+    "hint": "可私聊机器人发送管理指令",
+    "type": "string",
+    "default": ""
+  },
+  "debug": {
+    "description": "输出调试日志",
+    "type": "bool",
+    "default": false
+  }
+}

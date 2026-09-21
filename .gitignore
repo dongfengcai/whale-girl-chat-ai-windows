@@ -1,0 +1,13 @@
+# 运行时会生成的东西，都不该进仓库
+runtime/
+app/
+napcat/
+logs/
+run/
+config.env
+*.log
+*.part
+*.zip
+*.nupkg
+__pycache__/
+*.pyc
